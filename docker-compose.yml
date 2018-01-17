@@ -1,0 +1,20 @@
+version: "3"
+
+services:
+  redis:
+    image: redis:alpine
+  webapp:
+    build: ./addition-server
+    depends_on:
+      - redis
+    image: webapp:test
+    ports:
+      - "8080:8080"
+
+  # Add service description for redis cache version 3 here
+
+
+  # Add service description for python application here.
+  # Using `build` and not `image`
+  # Remember port mappings
+
